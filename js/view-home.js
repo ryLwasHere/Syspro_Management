@@ -49,7 +49,7 @@ function viewHome(){
         <button class="sc-add" data-action="addShortcut">${shortcuts.length>=7?ic("pen",12,2.4):ic("plus",12,2.4)} ${shortcuts.length>=7?"Edit shortcuts":"Add shortcut"}</button>
       </div>
     </div>
-    <div class="panel calendar-panel">
+    <div class="panel calendar-panel" style="display:flex;flex-direction:column">
       <div class="panel-h cal-toolrow" style="padding:10px 14px;flex:0 0 auto">
         <span class="panel-t">${ic("cal",14)} Calendar</span>
         <span class="mono" style="font-size:11.5px;font-weight:600" id="hcalTitle"></span>
@@ -65,7 +65,7 @@ function viewHome(){
         </div>
         <button class="btn xs ghost" data-action="nav" data-page="calendar">Open calendar ${ic("ext",11,2)}</button>
       </div>
-      <div id="hcalBody" style="padding:6px 12px 14px"></div>
+      <div id="hcalBody" style="padding:6px 12px 14px;flex:1;min-height:0"></div>
     </div>
     <div class="home-right">
       <div class="panel">

@@ -20,10 +20,10 @@ function viewHome(){
   const completedToday = active().filter(t=>t.due===TODAY&&t.status==="done").sort((a,b)=>due(a)-due(b));
   const displayTasks = firstPending.length > 0 ? firstPending : completedToday.slice(0, 1);
   
-  const scRows=shortcuts.slice(0,7).map(s=>`
-    <div class="sc-row" onclick="window.open('${esc(s.url)}','_blank')">
+  const scRows=shortcuts.map(s=>`
+    <div class="sc-tile" onclick="window.open('${esc(s.url)}','_blank')" data-tip="${esc(s.name)}">
       <div class="apptile" style="background:${s.bg};color:${s.fg}">${esc(s.g)}</div>
-      <span class="nm">${esc(s.name)}</span><span class="sc-ext">${ic("ext",13,1.9)}</span></div>`).join("");
+      <span class="nm">${esc(s.name)}</span></div>`).join("");
   return `
   <div class="page-head" style="align-items:center;margin-bottom:0">
     <div style="display:flex;align-items:center;gap:16px;flex:1">
@@ -45,8 +45,8 @@ function viewHome(){
     <div class="panel shortcuts-panel">
       <div class="panel-h"><span class="panel-t">${ic("grid",14)} Shortcuts</span>
         <button class="btn xs ghost panel-a" data-action="nav" data-page="shortcuts">Manage</button></div>
-      <div style="padding:8px 0 4px;flex:1;overflow-y:auto">${scRows}
-        <button class="sc-add" data-action="addShortcut">${shortcuts.length>=7?ic("pen",12,2.4):ic("plus",12,2.4)} ${shortcuts.length>=7?"Edit shortcuts":"Add shortcut"}</button>
+      <div class="sc-grid">${scRows}
+        <button class="sc-tile sc-addtile" data-action="addShortcut"><div class="apptile add-ico">${ic("plus",14,2.6)}</div><span class="nm">Add</span></button>
       </div>
     </div>
     <div class="panel calendar-panel" style="display:flex;flex-direction:column">
@@ -85,10 +85,9 @@ function viewHome(){
       <div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column">
         <div class="panel-h"><span class="panel-t">${ic("folder",14)} Files / Library</span>
           <button class="btn xs ghost panel-a" data-action="nav" data-page="files">All files</button></div>
-        <div class="file-dropzone" data-action="upload" style="border:2px dashed var(--line-3);border-radius:8px;margin:10px 14px;padding:20px;text-align:center;cursor:pointer;transition:all .15s;background:var(--panel-2)" ondragover="event.preventDefault();this.style.background='var(--acc-soft)';this.style.borderColor='var(--acc)'" ondragleave="this.style.background='var(--panel-2)';this.style.borderColor='var(--line-3)'" ondrop="event.preventDefault();this.style.background='var(--panel-2)';this.style.borderColor='var(--line-3)';const f=event.dataTransfer.files;if(f.length){toast(f.length+' file'+(f.length>1?'s':'')+' uploaded','success');setTimeout(()=>{$('#fileInput').click()},100)}">
-          <div style="color:var(--ink-3);margin-bottom:6px">${ic("up",24,2)}</div>
-          <div style="font-weight:600;font-size:12px;color:var(--ink-2)">Drop files here</div>
-          <div style="font-size:11px;color:var(--ink-4);margin-top:4px">or click to upload</div>
+        <div class="file-dropzone" data-action="upload" style="display:flex;align-items:center;gap:8px;border:1.5px dashed var(--line-3);border-radius:8px;margin:8px 14px;padding:8px 10px;text-align:left;cursor:pointer;transition:all .15s;background:var(--panel-2)" ondragover="event.preventDefault();this.style.background='var(--acc-soft)';this.style.borderColor='var(--acc)'" ondragleave="this.style.background='var(--panel-2)';this.style.borderColor='var(--line-3)'" ondrop="event.preventDefault();this.style.background='var(--panel-2)';this.style.borderColor='var(--line-3)';const f=event.dataTransfer.files;if(f.length){toast(f.length+' file'+(f.length>1?'s':'')+' uploaded','success');setTimeout(()=>{$('#fileInput').click()},100)}">
+          <div style="color:var(--ink-3);flex:0 0 auto">${ic("up",16,2.2)}</div>
+          <div style="min-width:0"><span style="font-weight:600;font-size:11.5px;color:var(--ink-2)">Drop files here</span><span style="font-size:11px;color:var(--ink-4)"> or click to upload</span></div>
         </div>
         ${recFiles.map(f=>{const ext=f.name.split(".").pop();return `
           <div class="f-row" data-action="previewFile" data-id="${f.id}">
@@ -99,12 +98,12 @@ function viewHome(){
       <div class="panel">
         <div class="panel-h"><span class="panel-t">${ic("archive",14)} Archive / Done</span>
           <button class="btn xs ghost panel-a" data-action="nav" data-page="archive">Archive</button></div>
-        ${doneRecent.map(t=>`
+        ${doneRecent.length?doneRecent.map(t=>`
           <div class="done-item" data-action="openTask" data-id="${t.id}" style="cursor:pointer">
             <span class="ckbox done" style="cursor:default">${ic("check",9,3.2)}</span>
             <span class="dt">${esc(t.title)}</span>
             <span class="fm mono" style="font-size:10px;color:var(--ink-4)">${t.doneAt?relTime(t.doneAt):""}</span>
-          </div>`).join("")}
+          </div>`).join(""):`<div class="empty" style="padding:24px 20px">${ic("archive",18)}<b>Nothing archived yet</b><p>Tasks you complete and archive will show up here.</p></div>`}
       </div>
     </div>
   </div>`;

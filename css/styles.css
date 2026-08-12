@@ -171,8 +171,8 @@ textarea.inp{resize:vertical;min-height:74px;line-height:1.55}
 .sc-add:hover{border-color:var(--acc);color:var(--acc-700);background:var(--acc-soft)}
 .apptile{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-weight:700;font-size:12px;flex:0 0 auto;font-family:var(--mono)}
 .home-right{display:flex;flex-direction:column;gap:18px;max-height:calc(100vh - 150px);overflow-y:auto}
-.shortcuts-panel{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
-.calendar-panel{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:24px}
+.shortcuts-panel{flex:0 0 auto;overflow-y:auto;display:flex;flex-direction:column}
+.calendar-panel{flex:1;min-height:0;display:flex;flex-direction:column}
 #hcalBody{flex:1;min-height:0;overflow:hidden;height:100%}
 #calBody{flex:1;min-height:0;overflow:hidden}
 

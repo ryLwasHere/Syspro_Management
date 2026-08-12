@@ -1,0 +1,95 @@
+{
+  "tasks": [
+    {
+      "id": "TSK-1041",
+      "title": "Finalize onboarding flow copy",
+      "status": "progress",
+      "prio": "high",
+      "due": "today",
+      "time": "14:00",
+      "assignee": "Maya Chen",
+      "project": "Orion Redesign",
+      "tags": ["ux", "copy"],
+      "desc": "Rewrite the 4-step onboarding microcopy. Keep tone concise; align with the new voice guidelines from the brand sprint.",
+      "attachments": ["f1"],
+      "comments": [
+        {"who": "Alex Rivera", "ts": 1723312800000, "txt": "Step 3 still feels long — can we cut it to one sentence?"},
+        {"who": "Maya Chen", "ts": 1723316400000, "txt": "Agreed, trimming it now. Will push before the 14:00 review."}
+      ],
+      "activity": [{"who": "System", "txt": "created this task", "ts": 1723230000000}],
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "archived": false,
+      "createdAt": 1723143600000
+    },
+    {
+      "id": "TSK-1038",
+      "title": "Fix webhook retry logic",
+      "status": "todo",
+      "prio": "critical",
+      "due": "today",
+      "time": "11:00",
+      "assignee": "Jonas Weber",
+      "project": "Data Pipeline v2",
+      "tags": ["backend", "bug"],
+      "desc": "Retries currently double-fire when the queue backs up. Add exponential backoff + idempotency key.",
+      "attachments": [],
+      "comments": [],
+      "activity": [{"who": "System", "txt": "created this task", "ts": 1723143600000}],
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "archived": false,
+      "createdAt": 1723057200000
+    },
+    {
+      "id": "TSK-1040",
+      "title": "Calendar sync spike",
+      "status": "progress",
+      "prio": "medium",
+      "due": "today",
+      "time": "17:30",
+      "assignee": "Tomás Silva",
+      "project": "Mobile App",
+      "tags": ["spike"],
+      "desc": "Evaluate two-way sync with external calendars. Document edge cases around recurring events.",
+      "attachments": [],
+      "comments": [],
+      "activity": [{"who": "System", "txt": "created this task", "ts": 1723143600000}],
+      "done": false,
+      "doneAt": null,
+      "doneBy": null,
+      "archived": false,
+      "createdAt": 1723143600000
+    }
+  ],
+  "files": [
+    {"id": "f8", "name": "demo-deck.pptx", "folder": "d2", "size": 4800000, "mod": 1723315200000, "owner": "Maya Chen", "task": "TSK-1044", "isNew": false},
+    {"id": "f1", "name": "onboarding-copy.md", "folder": "d2", "size": 12000, "mod": 1723312800000, "owner": "Maya Chen", "task": "TSK-1041", "isNew": false},
+    {"id": "f2", "name": "budget-model.xlsx", "folder": "d3", "size": 860000, "mod": 1723298400000, "owner": "Alex Rivera", "task": "TSK-1032", "isNew": false},
+    {"id": "f3", "name": "hero-banner.png", "folder": "d1", "size": 2400000, "mod": 1723226400000, "owner": "Priya Nair", "task": null, "isNew": false}
+  ],
+  "folders": [
+    {"id": "d1", "name": "Design Assets"},
+    {"id": "d2", "name": "Documents"},
+    {"id": "d3", "name": "Data Exports"},
+    {"id": "d4", "name": "Media"}
+  ],
+  "shortcuts": [
+    {"id": "s1", "name": "Google Drive", "desc": "Shared team drive & assets", "url": "https://drive.google.com", "g": "D", "bg": "#E4F4EA", "fg": "#188038"},
+    {"id": "s2", "name": "Microsoft Excel", "desc": "Budget & reporting workbooks", "url": "https://office.com", "g": "X", "bg": "#E4F4EA", "fg": "#107C41"},
+    {"id": "s3", "name": "VS Code", "desc": "Web editor — pipeline repo", "url": "https://vscode.dev", "g": "</>", "bg": "#E9F0FC", "fg": "#0078D4"},
+    {"id": "s4", "name": "Microsoft Fabric", "desc": "Warehouse & notebooks", "url": "https://fabric.microsoft.com", "g": "F", "bg": "#E3F2EF", "fg": "#0B7C6F"},
+    {"id": "s5", "name": "AWS Cloud", "desc": "Prod console · us-east-1", "url": "https://aws.amazon.com", "g": "aws", "bg": "#FBF1DE", "fg": "#B25E09"},
+    {"id": "s6", "name": "Claude", "desc": "Research & drafting assistant", "url": "https://claude.ai", "g": "✳", "bg": "#FBEDE2", "fg": "#C05F24"},
+    {"id": "s7", "name": "Gemini", "desc": "Secondary AI workspace", "url": "https://gemini.google.com", "g": "✦", "bg": "#EDEAFB", "fg": "#4E6FE3"},
+    {"id": "s8", "name": "Notion", "desc": "Team wiki & meeting notes", "url": "https://notion.so", "g": "N", "bg": "#F1F2F5", "fg": "#181D27"},
+    {"id": "s9", "name": "Jira", "desc": "Legacy tracker (read-only)", "url": "https://atlassian.com", "g": "J", "bg": "#E9F0FC", "fg": "#2684FF"}
+  ],
+  "notifications": [
+    {"id": "n1", "type": "assign", "html": "<b>Maya Chen</b> assigned you <b>TSK-1032</b> · Quarterly budget review sheet", "ts": 1723315500000, "unread": true},
+    {"id": "n2", "type": "due", "html": "<b>TSK-1041</b> is due today at <b>14:00</b>", "ts": 1723313400000, "unread": true},
+    {"id": "n3", "type": "overdue", "html": "<b>TSK-1029</b> — Migrate auth service is <b>overdue by 1 day</b>", "ts": 1723304400000, "unread": true}
+  ]
+}

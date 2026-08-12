@@ -1,0 +1,24 @@
+{
+  "name": "syspro-workspace",
+  "version": "1.0.0",
+  "description": "Syspro Workspace - Project management frontend with backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "project-management",
+    "workspace",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "sql.js": "^1.14.1",
+    "uuid": "^14.0.1"
+  }
+}

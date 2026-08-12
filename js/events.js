@@ -20,6 +20,7 @@ document.addEventListener("click",e=>{
   switch(a){
     case"nav":go(el.dataset.page);break;
     case"openPalette":openPalette();break;
+    case"toggleTheme":toggleTheme();break;
     case"toggleNotif":{const p=document.querySelector(".pop");const has=p&&p.dataset.np;if(has){closePopovers()}else{const pp=notifPanel($("#bellBtn"));pp.dataset.np=1}break}
     case"userMenu":{const p=document.querySelector(".pop");if(p&&p.dataset.um){closePopovers();break}
       const pp=popover(el,`<div style="padding:6px">

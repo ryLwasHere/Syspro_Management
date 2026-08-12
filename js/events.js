@@ -99,6 +99,7 @@ document.addEventListener("click",e=>{
     case"markAllRead":notifs.forEach(n=>n.unread=false);renderBell();toast("All notifications marked as read","success");break;
     case"fakeSave":toast("Profile saved","success");break;
     case"density":document.body.classList.toggle("comfy",el.dataset.d==="comfy");render();toast("Density updated","info");break;
+    case"toggleTheme":{document.body.classList.toggle("dark");const isDark=document.body.classList.contains("dark");localStorage.setItem("syspro-theme",isDark?"dark":"light");updateThemeIcons();toast(isDark?"Dark mode enabled":"Light mode enabled","info");break}
     case"resetData":confirmDlg({title:"Reset workspace",msg:"This reloads the app and restores all demo data.",ok:"Reset",onOk:()=>location.reload()});break;
   }
 });

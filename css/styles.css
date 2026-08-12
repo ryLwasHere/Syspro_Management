@@ -22,6 +22,18 @@
   --sans:'Inter',system-ui,-apple-system,sans-serif;
   --row-py:9px;
 }
+body.dark{
+  --bg:#0D1117; --panel:#161B22; --panel-2:#1C2128; --panel-3:#21262D;
+  --line:#30363D; --line-2:#484F58; --line-3:#6E7681;
+  --ink:#E6EDF3; --ink-2:#8B949E; --ink-3:#6E7681; --ink-4:#484F58;
+  --acc:#2AB7A5; --acc-600:#249A8C; --acc-700:#1F8579; --acc-soft:#1A3D38; --acc-ring:rgba(42,183,165,.2);
+  --blue:#4A8FFF; --blue-soft:#1A2F4D;
+  --red:#FF6B6B; --red-soft:#4D1F1F;
+  --amber:#F5A623; --amber-soft:#4D3A1F;
+  --orange:#FF8C42; --orange-soft:#4D2A1F;
+  --green:#3AC171; --green-soft:#1F4D2F;
+  --violet:#8B75F5; --violet-soft:#2A1F4D;
+}
 body.comfy{--row-py:13px}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}

@@ -12,7 +12,6 @@ function viewHome(){
   const todays=active().filter(t=>t.due===TODAY&&t.status!=="done").sort((a,b)=>due(a)-due(b));
   const overdue=active().filter(t=>t.due&&t.due<TODAY&&t.status!=="done");
   const inprog=active().filter(t=>t.status==="progress");
-  const weekDone=tasks.filter(t=>t.doneAt&&Date.now()-t.doneAt<7*864e5);
   const recFiles=[...files].sort((a,b)=>b.mod-a.mod).slice(0,4);
   const doneRecent=tasks.filter(t=>t.status==="done"&&t.doneAt).sort((a,b)=>b.doneAt-a.doneAt).slice(0,3);
   
@@ -35,7 +34,6 @@ function viewHome(){
         <div class="stat"><span class="sq" style="background:var(--blue)"></span><b>${todays.length}</b><span>due<br>today</span></div>
         <div class="stat"><span class="sq" style="background:var(--red)"></span><b>${overdue.length}</b><span>overdue</span></div>
         <div class="stat"><span class="sq" style="background:var(--amber)"></span><b>${inprog.length}</b><span>in<br>progress</span></div>
-        <div class="stat"><span class="sq" style="background:var(--green)"></span><b>${weekDone.length}</b><span>done this<br>week</span></div>
       </div>
       <div class="page-actions" style="margin-left:auto;display:flex;gap:8px;align-items:center">
         <span class="mono" style="font-size:11px;color:var(--ink-3)">${new Date().toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",year:"numeric"})}</span>

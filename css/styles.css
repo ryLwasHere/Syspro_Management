@@ -464,3 +464,105 @@ textarea.inp{resize:vertical;min-height:74px;line-height:1.55}
 [data-tip].tip-b:hover::after{bottom:auto;top:calc(100% + 7px)}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* ============ THEME TOGGLE / DARK MODE ============ */
+.theme-toggle{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--panel-3);color:var(--ink-2);font-weight:700;font-size:12px;transition:background .12s,border-color .12s,color .12s;white-space:nowrap}
+.theme-toggle:hover{background:var(--panel);border-color:var(--line-3);color:var(--ink)}
+.theme-toggle[aria-pressed="true"]{background:#102A43;border-color:#2F5F89;color:#D9F2FF}
+.theme-ico{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;font-size:10px;line-height:1}
+.theme-sun{background:#FFD166;color:#3A2500}
+.theme-moon{display:none;background:#BFE1FF;color:#071523;box-shadow:inset -4px 0 0 #102A43}
+html[data-theme="dark"] .theme-sun{display:none}
+html[data-theme="dark"] .theme-moon{display:grid}
+
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#07111F; --panel:#0F1B2A; --panel-2:#142235; --panel-3:#1B2B40;
+  --line:#2A3A4F; --line-2:#3A4D64; --line-3:#58708E;
+  --ink:#F3F7FB; --ink-2:#D7E1EC; --ink-3:#A9B8C8; --ink-4:#7F91A6;
+  --acc:#4DD0C3; --acc-600:#37B8AB; --acc-700:#8EF0E6; --acc-soft:#123C43; --acc-ring:rgba(77,208,195,.28);
+  --blue:#8AB7FF; --blue-soft:#163154;
+  --red:#FF8A8A; --red-soft:#4A2028;
+  --amber:#FFD166; --amber-soft:#443314;
+  --orange:#FFB16E; --orange-soft:#4B2B19;
+  --green:#8BE28B; --green-soft:#173F2A;
+  --violet:#C5B8FF; --violet-soft:#2E2850;
+  --sh-1:0 1px 2px rgba(0,0,0,.32);
+  --sh-2:0 8px 22px rgba(0,0,0,.34),0 1px 3px rgba(0,0,0,.25);
+  --sh-3:0 22px 56px rgba(0,0,0,.52),0 3px 10px rgba(0,0,0,.34);
+}
+html[data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+html[data-theme="dark"] ::selection{background:#1C5960;color:#fff}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:#40556F;border-color:transparent;background-clip:content-box}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover{background:#58708E;border-color:transparent;background-clip:content-box}
+html[data-theme="dark"] .sk{background:linear-gradient(90deg,#142235 25%,#22344A 45%,#142235 65%);background-size:200% 100%}
+html[data-theme="dark"] #boot .bsk-side,
+html[data-theme="dark"] .sidebar{background:#0B1624}
+html[data-theme="dark"] .dotgrid{background-image:radial-gradient(circle,#26384D 1px,transparent 1px)}
+html[data-theme="dark"] .logo{background:#020817}
+html[data-theme="dark"] .btn,
+html[data-theme="dark"] .inp,
+html[data-theme="dark"] .usercard,
+html[data-theme="dark"] .stat,
+html[data-theme="dark"] .bcard,
+html[data-theme="dark"] .trow,
+html[data-theme="dark"] .tbl,
+html[data-theme="dark"] #drawer,
+html[data-theme="dark"] .fold-card,
+html[data-theme="dark"] .file-card,
+html[data-theme="dark"] .sh-card,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .pop,
+html[data-theme="dark"] .palette{background:var(--panel);color:var(--ink)}
+html[data-theme="dark"] .searchpill:hover,
+html[data-theme="dark"] .btn:hover,
+html[data-theme="dark"] .seg button.on,
+html[data-theme="dark"] kbd,
+html[data-theme="dark"] .kbd,
+html[data-theme="dark"] .file-acts,
+html[data-theme="dark"] .sh-tools button,
+html[data-theme="dark"] .dr-title:focus,
+html[data-theme="dark"] .cal-add{background:var(--panel-2)}
+html[data-theme="dark"] .nav-item:hover,
+html[data-theme="dark"] .bcol,
+html[data-theme="dark"] .cal-cell:hover,
+html[data-theme="dark"] .wk-col:hover,
+html[data-theme="dark"] .cal-cell.wkend,
+html[data-theme="dark"] .matrix tbody tr:hover{background:var(--panel-2)}
+html[data-theme="dark"] .nav-item.active,
+html[data-theme="dark"] .cal-cell.today,
+html[data-theme="dark"] .cal-cell.wkend.today,
+html[data-theme="dark"] .pal-item.sel,
+html[data-theme="dark"] .notif-item.unread,
+html[data-theme="dark"] .sh-addcard:hover{background:var(--acc-soft);color:var(--acc-700)}
+html[data-theme="dark"] .nav-item.active .nav-count,
+html[data-theme="dark"] .pal-item.sel .pi-ic{background:#102A30;border-color:#3E8990;color:var(--acc-700)}
+html[data-theme="dark"] .storage-bar,
+html[data-theme="dark"] .switch i{background:#33465D}
+html[data-theme="dark"] .badge,
+html[data-theme="dark"] .filter-count,
+html[data-theme="dark"] .cal-cell.today .dnum,
+html[data-theme="dark"] .wk-head.today .wn{color:#07111F}
+html[data-theme="dark"] .ovl,
+html[data-theme="dark"] .pal-ovl{background:rgba(2,8,18,.72)}
+html[data-theme="dark"] .toast{background:#F3F7FB;color:#07111F}
+html[data-theme="dark"] .toast .tact{color:#006B5F}
+html[data-theme="dark"] [data-tip]:hover::after{background:#E8F0F8;color:#07111F}
+html[data-theme="dark"] select.inp{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D7E1EC' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='m6 9.5 6 6 6-6'/%3E%3C/svg%3E")}
+
+/* Dark-mode native input fixes: keep select chevrons single and picker icons legible. */
+html[data-theme="dark"] select.inp{
+  background-color:var(--panel);
+  background-repeat:no-repeat;
+  background-position:right 9px center;
+  background-size:12px 12px;
+}
+html[data-theme="dark"] input[type="date"].inp,
+html[data-theme="dark"] input[type="time"].inp{
+  color-scheme:dark;
+  background-color:var(--panel);
+}
+html[data-theme="dark"] input[type="date"].inp::-webkit-calendar-picker-indicator,
+html[data-theme="dark"] input[type="time"].inp::-webkit-calendar-picker-indicator{
+  filter:invert(1) brightness(1.35);
+  opacity:.95;
+}

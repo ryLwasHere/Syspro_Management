@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  try{
+    var saved=localStorage.getItem("syspro-theme");
+    var dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+  }catch(e){document.documentElement.dataset.theme="light";}
+})();
+</script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -69,6 +78,11 @@
       <div class="crumbs" id="crumbs"></div>
       <div class="top-right">
         <span class="sync"><i></i>synced</span>
+        <button class="theme-toggle" id="themeToggle" data-action="toggleTheme" type="button" aria-label="Switch to dark mode" aria-pressed="false" data-tip="Toggle theme">
+          <span class="theme-ico theme-sun" aria-hidden="true">☀</span>
+          <span class="theme-ico theme-moon" aria-hidden="true">●</span>
+          <span class="theme-text">Light</span>
+        </button>
         <button class="searchpill" data-action="openPalette">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.3"/><path d="m15.6 15.6 4.9 4.9"/></svg>
           Search tasks, files, apps… <kbd>⌘ K</kbd>
@@ -120,6 +134,7 @@
 <script src="js/view-archive.js"></script>
 <script src="js/view-settings.js"></script>
 <script src="js/palette.js"></script>
+<script src="js/theme.js"></script>
 <script src="js/events.js"></script>
 <script src="js/main.js"></script>
 </body>

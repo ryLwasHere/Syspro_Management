@@ -512,7 +512,7 @@ html[data-theme="dark"] .file-card,
 html[data-theme="dark"] .sh-card,
 html[data-theme="dark"] .modal,
 html[data-theme="dark"] .pop,
-html[data-theme="dark"] .palette{background:var(--panel);color:var(--ink)}
+html[data-theme="dark"] .palette{background-color:var(--panel);color:var(--ink)}
 html[data-theme="dark"] .searchpill:hover,
 html[data-theme="dark"] .btn:hover,
 html[data-theme="dark"] .seg button.on,
@@ -547,4 +547,4 @@ html[data-theme="dark"] .pal-ovl{background:rgba(2,8,18,.72)}
 html[data-theme="dark"] .toast{background:#F3F7FB;color:#07111F}
 html[data-theme="dark"] .toast .tact{color:#006B5F}
 html[data-theme="dark"] [data-tip]:hover::after{background:#E8F0F8;color:#07111F}
-html[data-theme="dark"] select.inp{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D7E1EC' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='m6 9.5 6 6 6-6'/%3E%3C/svg%3E")}
+html[data-theme="dark"] select.inp{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D7E1EC' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='m6 9.5 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center}
